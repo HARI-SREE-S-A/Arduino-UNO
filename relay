@@ -1,0 +1,34 @@
+##pin daigram##
+NC: Normally closed 120-240V terminal
+NO: Normally open 120-240V terminal
+C: Common terminal
+Ground: Connects to the ground pin on the Arduino 5V
+Vcc: Connects the Arduino’s 5V pin
+Signal: Carries the trigger signal from the Arduino that activates the relay
+'''
+int ch=4; // number of relaysint 
+relay[]={2,3,4,5}; // pin number of relays
+int wait=2000;int i=0;
+void setup() {
+for(int i=0; i<ch; i++){
+pinMode(relay[i],OUTPUT); // set relay pins as output
+digitalWrite(relay[i],HIGH); // turn relay off
+}
+}
+void loop() {
+for(int i=0; i<ch; i++){
+digitalWrite(relay[i],LOW); // turn relay ON
+delay(wait);
+}
+for(int i=0; i<ch; i++){
+digitalWrite(relay[i],HIGH); // turn relay OFF
+delay(wait);
+}
+}
+
+
+
+
+
+
+'''
