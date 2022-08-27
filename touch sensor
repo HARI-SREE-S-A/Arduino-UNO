@@ -1,0 +1,76 @@
+#define tsPin 2  // touch sensor pin
+int ledPin = 3;  // led pin
+ 
+ void setup()
+ {  
+     Serial.begin(9600);       //sensor buart rate
+     pinMode(ledPin, OUTPUT);  // led
+     pinMode(tsPin, INPUT);    //  touch sensor 
+     } 
+  void loop() 
+    { 
+      int tsValue = digitalRead(tsPin); 
+      delay(100);
+      
+      if (tsValue == HIGH)
+        {  
+           digitalWrite(ledPin, HIGH); // led on 
+           Serial.println("TOUCHED");
+           }  
+     else
+        {    
+         digitalWrite(ledPin,LOW);     // led off
+             Serial.println("not touched"); 
+          }   
+      }
+
+Code for operating an AC bulb
+
+
+int touchPin = 2; // touch sensor
+int ledPin   = 3; // led pin
+int relayPin = 4; // relay module
+
+
+int val = 0;
+int lightON = 0; 
+int touched = 0;
+
+void setup() {
+  Serial.begin(9600);        //sensor buart rate
+  pinMode(touchPin, INPUT);  //  touch sensor 
+  pinMode(relayPin, OUTPUT); // Relay Module
+  pinMode(ledPin, OUTPUT);   // led
+
+  digitalWrite(relayPin, HIGH); // Normally Relay
+
+}
+
+void loop() {
+
+  val = digitalRead(touchPin);
+
+  if(val == HIGH && lightON == LOW){
+
+    touched = 1-touched;
+    delay(100);
+  }    
+
+  lightON = val;
+
+      if(touched == HIGH)
+      {
+        Serial.println("Light ON");
+        digitalWrite(relayPin, LOW); // Relay ON
+        digitalWrite(ledPin, HIGH);   // led on 
+       
+      }else
+      {
+        Serial.println("Light OFF");
+        digitalWrite(relayPin, HIGH);  // Relay OFF
+        digitalWrite(ledPin,LOW);     // led off
+   
+      }     
+
+  delay(100);
+}
