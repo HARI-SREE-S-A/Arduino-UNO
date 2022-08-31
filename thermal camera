@@ -1,0 +1,56 @@
+#include <Adafruit_MLX90640.h>
+
+//Library instance
+Adafruit_MLX90640 mlx;
+
+// Buffer to store themal image
+float frame[32*24];
+
+void setup() {
+  while (!Serial) delay(10);
+  Serial.begin(115200);
+  delay(100);
+  //Serial connected/acctivated at 115200 baud rate
+
+  Serial.println(“Adafruit MLX90640 Simple Test”);
+  if (! mlx.begin(MLX90640_I2CADDR_DEFAULT, &Wire)) {
+    Serial.println(“MLX90640 not found!”);
+    while (1) delay(10);
+  }
+  Serial.println(“Found Adafruit MLX90640”);
+
+  //Set the sensor mode
+  //mlx.setMode(MLX90640_INTERLEAVED);
+  mlx.setMode(MLX90640_CHESS);//Chess view(Grid with boxes)
+
+  // Set resolution 16,17,18 or 19 – Current 18
+  mlx.setResolution(MLX90640_ADC_18BIT);
+
+ // Set Refresh rate 1,2,4,8,16,32,64 Hz – Current 2 Hz 
+  mlx.setRefreshRate(MLX90640_2_HZ);
+}
+
+void loop() {
+  //Half second delay for camera to cool up
+  delay(500);
+  //Get the IR frame
+  if (mlx.getFrame(frame) != 0) {
+    Serial.println(“Failed”);
+    return;
+  }
+  //Give two line spaces
+  Serial.println();
+  Serial.println();
+
+  //Print the frame temperature on serial monitor
+  for (uint8_t h=0; h<24; h++) {//Depecting Row – 24 rows   
+
+    for (uint8_t w=0; w<32; w++) {//Depecting Column – 32 columns
+      float t = frame[h*32 + w];
+        Serial.print(t, 1);
+        Serial.print(“, “);
+    }   
+
+    Serial.println();//Next line after each row
+  }
+}
