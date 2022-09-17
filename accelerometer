@@ -15,7 +15,7 @@ Serial.println("Initializing the MPU6050 sensor. Wait for a while");
 
 delay(2000);
 
-while(!accelerometer.begin(MPU6050_SCALE_2000DPS, MPU6050_RANGE_2G)) // Checking whether the mpu6050 is sensing or not
+while(!accelerometer.begin(MPU6050_SCALE_2000DPS, MPU6050_RANGE_2G)) // Checking whether the mpu6050 is sensing 
 
 {
 Serial.println("Failed to read from the sensor. Something is Wrong!");
