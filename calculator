@@ -7,7 +7,7 @@ makes the operation, witch can be of +, -, * or /.
 E.G. : send "2+3" (Without quotes and with no
 space separing the info), and arduino answers 5.
 Digit "7-3" and arduino te responde com 4.
-Criado por João Paulo Rodrigues Poltronieri
+Criado por João Paulo Rodrigues P
 
 This code is on public domain
 */
