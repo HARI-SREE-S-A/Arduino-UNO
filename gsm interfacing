@@ -9,7 +9,7 @@ void setup()
 void loop()
 {
      delay(10000); //Give enough time for GSM to register on Network
-     SendSMS();    //Send one SMS
+     SendSMS();    //Send one sms
      while(1);     //Wait foreveeer
 }
 
