@@ -17,6 +17,8 @@ delay(2000);
 
 while(!accelerometer.begin(MPU6050_SCALE_2000DPS, MPU6050_RANGE_2G)) // Checking whether the mpu6050 is sensing 
 
+
+
 {
 Serial.println("Failed to read from the sensor. Something is Wrong!");
 delay(500);
