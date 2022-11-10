@@ -6,6 +6,8 @@ Adafruit_MLX90640 mlx;
 // Buffer to store themal image
 float frame[32*24];
 
+
+
 void setup() {
   while (!Serial) delay(10);
   Serial.begin(115200);
