@@ -1,5 +1,6 @@
 const int led = 9; // Led positive terminal to the digital pin 9. 
-const int sensor = 5; //signal pin of sensor to digital pin 5. 
+const int sensor = 5; //signal pin of sensor to digital pin 5.
+
 const int state = LOW; 
 const int val = 0; 
 void setup() { // Void setup is ran only once after each powerup or reset of the  board.
