@@ -12,6 +12,7 @@ int Devices;
 Serial.println("Scanning...");
 Devices = 0;
 for(address = 1; address < 127; address++ )
+
 {
 
 Wire.beginTransmission(address);
