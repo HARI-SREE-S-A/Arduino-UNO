@@ -2,6 +2,7 @@
 
 
 void setup()
+
 {
     Serial.begin(9600);   //Initialise serial to communicate with GSM Modem
 }
