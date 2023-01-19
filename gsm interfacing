@@ -23,5 +23,6 @@ void SendSMS()
   Serial.println("Hello from GSM Modem!");//the content of the message
   delay(200);
   Serial.println((char)26); //the stopping character Ctrl+Z
+  
   delay(1000);  
 }
