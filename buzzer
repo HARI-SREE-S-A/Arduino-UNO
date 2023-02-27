@@ -7,5 +7,4 @@ pinMode(buzzerPin, OUTPUT); //addigning  pin to Output mode</p><p>}</p><p>void l
   noTone(buzzerPin);
   
  
- 
   delay(100);
