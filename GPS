@@ -8,7 +8,6 @@ SoftwareSerial ss(RXPin, TXPin);
  
  
 
-
 void setup()
 {
   Serial.begin(115200);
