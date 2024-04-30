@@ -7,7 +7,6 @@
 
 
 
-
 MPU6050 accelerometer;         // Initializing a variable name accelerometer of type MPU6050
 
 
