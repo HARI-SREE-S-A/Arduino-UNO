@@ -1,7 +1,6 @@
 #include <Wire.h>     // Including the wire library
 
 
-
 #include <MPU6050.h>  // Including the MPU6050 library
 
 
